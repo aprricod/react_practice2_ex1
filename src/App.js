@@ -1,22 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Checkbox from "@material-ui/core/Checkbox";
+import Typography from "@material-ui/core/Typography";
+import React from "react";
+import "./App.css";
+
+let toggle = false;
+
+function textThrough(e) {
+  console.log(e.target.checked);
+  // this.toggle = !this.toggle;
+}
 
 function App() {
+  console.log("App");
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Typography
+          style={{ textDecoration: toggle ? "line-through" : "none" }}
         >
-          Learn React
-        </a>
+          <Checkbox value="Чек-бокс" onChange={textThrough} />
+          Checkbox Disabled
+        </Typography>
       </header>
     </div>
   );
